@@ -1,0 +1,120 @@
+%Gurps 4th Lite Combat Cards
+\documentclass[parskip,letterpaper]{scrartcl}
+\usepackage[top=7mm,bottom=7mm,left=7mm,right=7mm]{geometry}
+
+
+\usepackage[table,usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{dingbat}
+\usepackage{fourier}
+\usepackage[clock]{ifsym}
+\usepackage{dictsym}
+\usepackage{multirow}
+
+\pgfmathsetmacro{\cardroundingradius}{4mm}
+\pgfmathsetmacro{\striproundingradius}{3mm}
+\pgfmathsetmacro{\cardwidth}{6.3}
+\pgfmathsetmacro{\cardheight}{8.8}
+\pgfmathsetmacro{\stripwidth}{1.0}
+\pgfmathsetmacro{\strippadding}{0.1}
+\pgfmathsetmacro{\textpadding}{0.3}
+\newcommand{\stripcolor}{cyan}
+\newcommand{\striptext}{Sneaky Cards}
+\newcommand{\topcaption}{Your Objective}
+\newcommand{\topcontent}{\textit{''Inter Arma Enim Silent Leges''}}
+\newcommand{\bottomcaption}{}
+\newcommand{\bottomcontent}{In times of war, the law falls silent.\\ \tikz{\fill[even odd rule] (0,0) circle (0.3) (-0.2,-0.2) rectangle (0.2,0.2);}}
+
+\pgfmathsetmacro{\ruleheight}{0.08}
+\newcommand{\stripfontsize}{\Huge}
+\newcommand{\captionfontsize}{\Large}
+\newcommand{\textfontsize}{\large}
+\newcommand{\seperatorline}{\tikz{\fill (0,0) rectangle (\cardwidth-\strippadding-\stripwidth-2*\textpadding,\ruleheight);}\\}
+
+\newcommand{\printcard}{\begin{tikzpicture}
+    \draw[rounded corners=\cardroundingradius] (0,0) rectangle (\cardwidth,\cardheight);
+    \fill[\stripcolor,rounded corners=\striproundingradius] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90,above left,black,font=\stripfontsize] {\striptext};
+    \node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,below right,inner sep=0] at (\strippadding+\stripwidth+\textpadding,\cardheight-\textpadding) 
+    {{\captionfontsize \topcaption \\\vspace{3mm}} 
+        {\textfontsize \topcontent \\}
+        \seperatorline 
+        {\textfontsize \bottomcontent \\}
+    };
+\end{tikzpicture}
+}
+%\setstretch{0.75}
+\begin{document}
+\renewcommand{\stripcolor}{yellow}
+	\renewcommand{\striptext}{Putpocket}
+	\renewcommand{\topcontent}{Give this card to somebody without them knowing}
+	\renewcommand{\bottomcontent}{if your target catches you giving this card to them, you must take back this card.}
+	\printcard
+\renewcommand{\stripcolor}{cyan}
+	\renewcommand{\striptext}{Showdown}
+	\renewcommand{\topcontent}{Defeat somebody in a duel}
+	\renewcommand{\bottomcontent}{Challenge somebody to a contest (eg, Arm Wrestle).\\\vspace{2mm} If you are victorious, give this card to that person}
+	\printcard
+\renewcommand{\stripcolor}{green}
+	\renewcommand{\striptext}{The gift of Giving}
+	\renewcommand{\topcontent}{Give a Gift to Somebody}
+	\renewcommand{\bottomcontent}{Give the last item on this list to somebody, along with this card.\\\vspace{2mm}Before you give this card, add another item to the list.\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill}
+	\printcard
+\renewcommand{\stripcolor}{cyan}
+	\renewcommand{\striptext}{Pickpocket}
+	\renewcommand{\topcontent}{Take a card from somebody without them knowing, and leave this card in it's place}
+	\renewcommand{\bottomcontent}{If your target catches you stealing their card, give this card away.}
+	\printcard
+\renewcommand{\stripcolor}{red}
+	\renewcommand{\striptext}{Plain Sight}
+	\renewcommand{\topcontent}{Secretly hide this card}
+	\renewcommand{\bottomcontent}{Your objective is complete when somebody claims this card.\\\vspace{3mm}{\bfseries \Large If you're reading this, you must claim this card}}
+	\printcard
+\renewcommand{\stripcolor}{red}
+	\renewcommand{\striptext}{Doppelg\"anger}
+	\renewcommand{\topcontent}{Find this cards exact double}
+	\renewcommand{\bottomcontent}{When you do: Hide one card, and give the other away.}
+	\printcard
+\renewcommand{\stripcolor}{red}
+	\renewcommand{\striptext}{Doppelg\"anger}
+	\renewcommand{\topcontent}{Find this cards exact double}
+	\renewcommand{\bottomcontent}{When you do: Hide one card, and give the other away.}
+	\printcard
+\renewcommand{\stripcolor}{violet}
+	\renewcommand{\striptext}{Commedian}
+	\renewcommand{\topcontent}{Make somebody Laugh}
+	\renewcommand{\bottomcontent}{When you do: give them this card.}
+	\printcard
+\renewcommand{\stripcolor}{green}
+	\renewcommand{\striptext}{Tribute}
+	\renewcommand{\topcontent}{Give a complement to somebody}
+	\renewcommand{\bottomcontent}{When you do: give them this card.}
+	\printcard
+\renewcommand{\stripcolor}{red}
+	\renewcommand{\striptext}{Eye spy}
+	\renewcommand{\topcontent}{Find an item from the list}
+	\renewcommand{\bottomcontent}{When you do: add two items to the list and give the card away.\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill}
+	\printcard
+\renewcommand{\stripcolor}{lightgray}
+	\renewcommand{\striptext}{once apon a time\ldots}
+	\renewcommand{\topcontent}{Add an item to the story, then give this card away.}
+	\renewcommand{\bottomcontent}{\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill\\\hrulefill}
+	\printcard
+\end{document}
+
+% -- Defeat somebody in a duel.
+%Your objective: Get revenge. Give the revengee this card.
+%Your objective: reverse hustle someone. Forcibly give them money, then give them this card.
+% -- Give this card to somebody without them knowing.
+%Your objective: Get this card signed by a celebrity, then pass it on to someone else.
+%Make someone lose the game. Place this card as a trap for somebody else.
+% -- Find this card's exact double.
+% -- Find the object circled on the list. When you have found it, cross it off and circle a new object, then give this card away.
+% -- Place this card someone highly visible but hard to reach. Your objective is complete when someone has removed the card
+% -- Give a gift to somebody, along with this card.
+% -- Make somebody laugh.
+%Return a lost item to it's owner, along with this card.
+%Find someone who needs cheering up. Give them this card, and something to cheer them up.
+%Add vone word to the story on the back, then give this card to someone else.
