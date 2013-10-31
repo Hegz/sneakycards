@@ -29,6 +29,7 @@
 \newcommand{\topcontent}{}
 \newcommand{\bottomcaption}{\bfseries -- Prototype Card -- \\ http://sneakycards.net}
 \newcommand{\bottomcontent}{}
+\newcommand{\creator}{Harry Lee}
 
 \pgfmathsetmacro{\ruleheight}{0.08}
 \newcommand{\stripfontsize}{\Huge}
@@ -39,6 +40,7 @@
 \newcommand{\printcard}{\begin{tikzpicture}
     \draw[rounded corners=\cardroundingradius] (0,0) rectangle (\cardwidth,\cardheight);
     \fill[\stripcolor,rounded corners=\striproundingradius] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90,above left,black,font=\stripfontsize] {\striptext};
+    \node[rotate=90,above right,black,font=\scriptsize] at (\strippadding+\stripwidth+0.4,\strippadding) {This card is based on the work of \creator.};
     \node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,below right,inner sep=0] at (\strippadding+\stripwidth+\textpadding,\cardheight-\textpadding) 
     {{\captionfontsize \topcaption \\\vspace{3mm}} 
         {\textfontsize \topcontent \\}
@@ -65,6 +67,7 @@
 \input{en_us/"free beer.tex"}
 \input{en_us/geocacher.tex}
 \input{en_us/"haiku for you.tex"}
+\input{en_us/investigator.tex}
 \input{en_us/"lost and found.tex"}
 \input{en_us/masquerade.tex}
 \input{en_us/"once upon a time.tex"}
