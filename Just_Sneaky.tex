@@ -1,9 +1,69 @@
-\input{en_us/"the sneaky card".tex}
-\input{en_us/"the sneaky card".tex}
-\input{en_us/"the sneaky card".tex}
-\input{en_us/"the sneaky card".tex}
-\input{en_us/"the sneaky card".tex}
-\input{en_us/"the sneaky card".tex}
-\input{en_us/"the sneaky card".tex}
-\input{en_us/"the sneaky card".tex}
-\input{en_us/"the sneaky card".tex}
+\documentclass[parskip,letterpaper]{scrartcl}
+\usepackage[top=7mm,bottom=0mm,left=7mm,right=0mm]{geometry}
+\setlength{\parindent}{0cm}
+
+\usepackage[table,usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{dingbat}
+\usepackage{fourier}
+\usepackage[clock]{ifsym}
+\usepackage{dictsym}
+\usepackage{wasysym}
+\usepackage{multirow}
+\usepackage{fontspec}
+
+
+\pgfmathsetmacro{\cardroundingradius}{4mm}
+\pgfmathsetmacro{\striproundingradius}{3mm}
+\pgfmathsetmacro{\cardwidth}{6.73}
+\pgfmathsetmacro{\cardheight}{8.83}
+\pgfmathsetmacro{\stripwidth}{1.0}
+\pgfmathsetmacro{\strippadding}{0.15}
+\pgfmathsetmacro{\textpadding}{0.4}
+\pgfmathsetmacro{\footeroffset}{7.8}
+\newcommand{\stripcolor}{cyan}
+\newcommand{\striptext}{Sneaky Cards}
+\newcommand{\topcaption}{Your Objective}
+\newcommand{\topcontent}{}
+\newcommand{\bottomcaption}{\bfseries {\small \fontspec{Goliath} SneakyCards.net}\\ -- Prototype card --}
+\newcommand{\bottomcontent}{}
+\newcommand{\creator}{Harry Lee}
+
+\pgfmathsetmacro{\ruleheight}{0.08}
+\newcommand{\stripfontsize}{\huge}
+\newcommand{\captionfontsize}{\LARGE}
+\newcommand{\textfontsize}{\large}
+\newcommand{\seperatorline}{\tikz{\fill (0,0) rectangle (\cardwidth-\strippadding-\stripwidth-2*\textpadding,\ruleheight);}\\}
+
+\newcommand{\printcard}{\begin{tikzpicture}%
+    \draw[white,rounded corners=\cardroundingradius] (0,0) rectangle (\cardwidth,\cardheight);
+	\fill[,white,rounded corners=\striproundingradius] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90,inner xsep=5mm,above left,black,font=\stripfontsize] {\fontspec{Goliath}\striptext};
+%	\fill[\stripcolor,rounded corners=\striproundingradius] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90,above left,black,font=\stripfontsize] {\striptext};
+    \node[rotate=90,above right,black,font=\scriptsize] at (\strippadding+\stripwidth+0.4,\strippadding) {This card is based on the ideas of {\bfseries \creator}.};
+    \node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,below right,inner sep=0] at (\strippadding+\stripwidth+\textpadding+.1,\cardheight-\textpadding) 
+    {{\centering\fontspec{Impact}\captionfontsize\topcaption\\\vspace{3mm}}% 
+        {\textfontsize \topcontent \\}%
+        \seperatorline%
+        {\textfontsize \bottomcontent \\}%
+    };
+    \node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,below right,inner sep=0] at (\strippadding+\stripwidth+\textpadding,\cardheight-\textpadding-\footeroffset)%
+		{\setstretch{0.75} \scriptsize \centering \bottomcaption\\};
+\end{tikzpicture}%
+}
+% \setstretch{0.75}
+\begin{document}
+\begin{flushleft}
+\input{en_us/"the sneaky card.tex"}
+\input{en_us/"the sneaky card.tex"}
+\input{en_us/"the sneaky card.tex"}
+\input{en_us/"the sneaky card.tex"}
+\input{en_us/"the sneaky card.tex"}
+\input{en_us/"the sneaky card.tex"}
+\input{en_us/"the sneaky card.tex"}
+\input{en_us/"the sneaky card.tex"}
+\input{en_us/"the sneaky card.tex"}
+\end{flushleft}
+\end{document}
