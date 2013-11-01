@@ -1,4 +1,3 @@
-%Gurps 4th Lite Combat Cards
 \documentclass[parskip,letterpaper]{scrartcl}
 \usepackage[top=7mm,bottom=0mm,left=7mm,right=0mm]{geometry}
 \setlength{\parindent}{0cm}
@@ -14,6 +13,8 @@
 \usepackage{dictsym}
 \usepackage{wasysym}
 \usepackage{multirow}
+\usepackage{fontspec}
+
 
 \pgfmathsetmacro{\cardroundingradius}{4mm}
 \pgfmathsetmacro{\striproundingradius}{3mm}
@@ -21,28 +22,29 @@
 \pgfmathsetmacro{\cardheight}{8.83}
 \pgfmathsetmacro{\stripwidth}{1.0}
 \pgfmathsetmacro{\strippadding}{0.15}
-\pgfmathsetmacro{\textpadding}{0.3}
+\pgfmathsetmacro{\textpadding}{0.4}
 \pgfmathsetmacro{\footeroffset}{7.8}
 \newcommand{\stripcolor}{cyan}
 \newcommand{\striptext}{Sneaky Cards}
 \newcommand{\topcaption}{Your Objective}
 \newcommand{\topcontent}{}
-\newcommand{\bottomcaption}{\bfseries -- Prototype Card -- \\ http://sneakycards.net}
+\newcommand{\bottomcaption}{\bfseries {\small \fontspec{Goliath} SneakyCards.net}\\ -- Prototype card --}
 \newcommand{\bottomcontent}{}
 \newcommand{\creator}{Harry Lee}
 
 \pgfmathsetmacro{\ruleheight}{0.08}
-\newcommand{\stripfontsize}{\Huge}
-\newcommand{\captionfontsize}{\Large}
+\newcommand{\stripfontsize}{\huge}
+\newcommand{\captionfontsize}{\LARGE}
 \newcommand{\textfontsize}{\large}
 \newcommand{\seperatorline}{\tikz{\fill (0,0) rectangle (\cardwidth-\strippadding-\stripwidth-2*\textpadding,\ruleheight);}\\}
 
 \newcommand{\printcard}{\begin{tikzpicture}%
     \draw[rounded corners=\cardroundingradius] (0,0) rectangle (\cardwidth,\cardheight);
-    \fill[\stripcolor,rounded corners=\striproundingradius] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90,above left,black,font=\stripfontsize] {\striptext};
-    \node[rotate=90,above right,black,font=\scriptsize] at (\strippadding+\stripwidth+0.4,\strippadding) {This card is based on the work of \creator.};
-    \node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,below right,inner sep=0] at (\strippadding+\stripwidth+\textpadding,\cardheight-\textpadding) 
-    {{\captionfontsize \topcaption \\\vspace{3mm}}% 
+	\fill[\stripcolor,rounded corners=\striproundingradius] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90,inner xsep=5mm,above left,black,font=\stripfontsize] {\fontspec{Goliath}\striptext};
+%	\fill[\stripcolor,rounded corners=\striproundingradius] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90,above left,black,font=\stripfontsize] {\striptext};
+    \node[rotate=90,above right,black,font=\scriptsize] at (\strippadding+\stripwidth+0.4,\strippadding) {This card is based on the ideas of {\bfseries \creator}.};
+    \node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,below right,inner sep=0] at (\strippadding+\stripwidth+\textpadding+.1,\cardheight-\textpadding) 
+    {{\centering\fontspec{Impact}\captionfontsize\topcaption\\\vspace{3mm}}% 
         {\textfontsize \topcontent \\}%
         \seperatorline%
         {\textfontsize \bottomcontent \\}%
@@ -51,94 +53,9 @@
 		{\setstretch{0.75} \scriptsize \centering \bottomcaption\\};
 \end{tikzpicture}%
 }
-%\setstretch{0.75}
+% \setstretch{0.75}
 \begin{document}
 \begin{flushleft}
-%\input{en_us/"apprentice wordsmith.tex"} 
-%\input{en_us/comedian.tex}
-\input{en_us/"base intrusion.tex"} % 4
-%\input{en_us/"bear hug.tex"}
-\input{en_us/"be brave.tex"} % 8
-\input{en_us/"bookworm.tex"} % 11
-\input{en_us/"caffine fiend.tex"} % 5
-%\input{en_us/"chips for free.tex"} 
-%\input{en_us/"collateral damage.tex"} % 2
-\input{en_us/"composite sketch.tex"} % 7
-%\input{en_us/doppelganger.tex} 
-%\input{en_us/doppelganger.tex} 
-%\input{en_us/"eye spy.tex"} 
-%\input{en_us/"finders keepers.tex"} 
-%\input{en_us/"finding the beginning.tex"} % 1
-\input{en_us/"free drink.tex"} % 10
-\input{en_us/geocacher.tex} % 7
-\input{en_us/"good samaritan.tex"} % 4
-\input{en_us/"haiku for you.tex"} % 4
-%\input{en_us/investigator.tex} % 2
-%\input{en_us/"kick me.tex"}
-%\input{en_us/"lost and found.tex"}
-%\input{en_us/masquerade.tex} % 0
-%\input{en_us/motivation.tex} % 1
-%\input{en_us/"not it.tex"}
-%\input{en_us/"not in kansas.tex"} % 3
-%\input{en_us/"once upon a time.tex"}
-%\input{en_us/"patch painter.tex"}
-%\input{en_us/pickpocket.tex} % 3
-\input{en_us/"picture this.tex"} % 4
-%\input{en_us/"plain sight.tex"}
-\input{en_us/putpocket.tex} % 9
-%\input{en_us/"reverse hustle.tex"} % 3
-\input{en_us/"rubbing elbows.tex"} % 6
-\input{en_us/showdown.tex} % 8
-%\input{en_us/"secrets of the library.tex"} % 2
-%\input{en_us/"serious business.tex"} % 0
-%\input{en_us/"sharing peace.tex"} % 1
-%\input{en_us/"sleeping beauty.tex"} % 3
-%\input{en_us/"star struck.tex"} % 3
-%\input{en_us/"story time.tex"} % 2
-%\input{en_us/"thank you.tex"} % 1
-%\input{en_us/"the come on.tex"} % 1
-\input{en_us/"the conversationist.tex"} % 9
-\input{en_us/"the exchange.tex"} % 6
-%\input{en_us/"the gathering.tex"} % 3
-\input{en_us/"the gift of giving.tex"} % 5
-%\input{en_us/"the hobbyist.tex"} % 2
-%\input{en_us/"the investor.tex"} % 3
-%\input{en_us/"the long con.tex"} % 0
-\input{en_us/"the meta card.tex"} % 9
-\input{en_us/"the meow card.tex"} % 14
-%\input{en_us/"the more you know.tex"} % 2
-%\input{en_us/"the party never stops.tex"} % 3
-\input{en_us/"the passenger.tex"} % 12
-\input{en_us/"the riddler.tex"} % 5
-\input{en_us/"the trophy.tex"} % 6
-%\input{en_us/traditional.tex} % 2
-\input{en_us/tribute.tex} %6
-%\input{en_us/"wallstreet.tex"}
-%\input{en_us/"yanky doodle.tex"}
-\input{en_us/"very merry unbirthday.tex"} % 9
-\input{en_us/"you're it.tex"} % 7
+\input{Community_Choice_set.tex}
 \end{flushleft}
-\newpage%Place for big cards to go.
-
 \end{document}
-%BLUE cards test your audacity and chutzpah.
-%YELLOW cards require sneakiness and espionage skills.
-%RED cards involve finding things - and not just objects.
-%GREEN cards are about goodwill and giving to others.
-%PURPLE cards will plague your brain with puzzles.
-%ORANGE cards challenge you to create art with purpose.
-%SILVER cards are information cards.
-% -- Defeat somebody in a duel.
-%Your objective: Get revenge. Give the revengee this card.
-%Your objective: reverse hustle someone. Forcibly give them money, then give them this card.
-% -- Give this card to somebody without them knowing.
-%Your objective: Get this card signed by a celebrity, then pass it on to someone else.
-%Make someone lose the game. Place this card as a trap for somebody else.
-% -- Find this card's exact double.
-% -- Find the object circled on the list. When you have found it, cross it off and circle a new object, then give this card away.
-% -- Place this card someone highly visible but hard to reach. Your objective is complete when someone has removed the card
-% -- Give a gift to somebody, along with this card.
-% -- Make somebody laugh.
-%Return a lost item to it's owner, along with this card.
-%Find someone who needs cheering up. Give them this card, and something to cheer them up.
-% -- Add one word to the story on the back, then give this card to someone else.
